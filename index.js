@@ -50,3 +50,5 @@ addTaskTrigger.addEventListener("click", (event) => {
   addTask(task);
   addTaskValue.value = "";
 });
+
+alert("読み込めてる？");
