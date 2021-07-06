@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>イヌキのTODO</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <h1 class="title">やらなあかんこと</h1>
+    </header>
+    <div class="container">
+      <div class="item">
+        <ul class="todo addTask-target"></ul>
+      </div>
+      <div class="item">
+        <form>
+          <input
+            class="addTask-value"
+            type="text"
+            placeholder="何やるか決めた？"
+          />
+          <button class="addTask-trigger" type="button">
+            やるで！
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="./src/index.js"></script>
+  </body>
+</html>
