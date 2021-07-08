@@ -49,7 +49,4 @@ addTaskTrigger.addEventListener("click", (event) => {
   const task = addTaskValue.value;
   addTask(task);
   addTaskValue.value = "";
-  localStorage.setItem("key", addTask.value);
 });
-
-console.log(localStorage.getItem("key"));

@@ -2,6 +2,7 @@ body {
   background: whitesmoke;
 }
 
+_:lang(x) + _:-webkit-full-screen-document,
 .isComplete {
   text-decoration: line-through red 3px;
 }
