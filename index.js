@@ -2,6 +2,7 @@
 const addTaskTrigger = document.getElementsByClassName("addTask-trigger")[0];
 const addTaskTarget = document.getElementsByClassName("addTask-target")[0];
 const addTaskValue = document.getElementsByClassName("addTask-value")[0];
+let list = [];
 
 //削除ボタンを押した時の挙動
 const removeTask = (removeButton) => {
@@ -42,11 +43,27 @@ const addTask = (task) => {
   listItem.appendChild(completeButton);
   listItem.appendChild(removeButton);
   addTaskTarget.appendChild(listItem);
+
+  localStorage.todoList = JSON.stringify(list);
+  list.push(task);
 };
 
 //タスクをフォームに入力し保存ボタンを押したときの挙動
+
 addTaskTrigger.addEventListener("click", (event) => {
   const task = addTaskValue.value;
   addTask(task);
   addTaskValue.value = "";
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const json = localStorage.todoList;
+  if (json === undefined) {
+    return;
+  }
+  list = JSON.parse(json);
+});
+
+for (const task of list) {
+  addTask(task);
+}
